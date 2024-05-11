@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('stock', function (Blueprint $table) {
             $table->id('item_id');
-            $table->string('quantity');
+            $table->integer('quantity');
             $table->timestamps();
             $table->softDeletes();
         });
