@@ -29,6 +29,7 @@ class ItemController extends Controller
         // $items = DB::table('item')->join('stock', 'item.item_id', '=', 'stock.item_id')->get();
         // $items = Item::has('stock')->get();
         // dd($items);
+        $items = Item::all();
         return view('item.index', compact('items'));
     }
 
