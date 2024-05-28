@@ -15,3 +15,127 @@ for (var i=0;i<100000;i++);
 var end = Date.now();
 var elapsed = end - start; // elapsed time in milliseconds
 console.log(elapsed); //71
+
+var s = new String("dummy"); //Creates a String object
+console.log(s); //"dummy"
+console.log(typeof s); //"object"
+var nonObject = "1" + "2"; //Create a String primitive
+console.log(typeof nonObject); //"string"
+var objString = new String("1" + "2"); //Creates a String object
+console.log(typeof objString); //"object"
+//Helper functions
+console.log("Hello".length); //5
+console.log("Hello".charAt(0)); //"H"
+console.log("Hello".charAt(1)); //"e"
+console.log("Hello".indexOf("e")); //1
+console.log("Hello".lastIndexOf("l")); //3
+console.log("Hello".startsWith("H")); //true
+console.log("Hello".endsWith("o")); //true
+console.log("Hello".includes("X")); //false
+var splitStringByWords = "Hello World".split(" ");
+console.log(splitStringByWords); //["Hello", "World"]
+var splitStringByChars = "Hello World".split("");
+console.log(splitStringByChars); //["H", "e", "l", "l", "o", " ","W", "o", "r", "l", "d"]
+console.log("lowercasestring".toUpperCase()); //"LOWERCASESTRING"
+console.log("UPPPERCASESTRING".toLowerCase());
+//"upppercasestring"
+console.log("There are no spaces in the end ".trim());
+
+function greeting(name) {
+	names = name || "John";
+	console.log(name);
+	console.log("Hello " + names);
+}
+greeting("Johnson"); // alerts "Hi Johnson";
+greeting(); //alerts "Hello John"
+function isAllowedToDrive(age){
+	if(age>21){
+	return true;
+	}else{
+	return false;
+	}
+	}
+	console.log(isAllowedToDrive(22));
+	function sayDay(day){
+	switch(day){
+	case 1: console.log("Sunday");
+	break;
+	case 2: console.log("Monday");
+	break;
+	default:
+	console.log("We live in a binary world. Go to Pluto");
+	}
+	}
+	sayDay(1); //Sunday
+	sayDay(3);
+
+    var validateDataForAge = function(data) {
+person = data();
+console.log(person);
+if (person.age <1 || person.age > 99){
+return true;
+}else{
+return false;
+}
+};
+var errorHandlerForAge = function(error) {
+console.log("Error while processing age");
+};
+function parseRequest(data,validateData,errorHandler) {
+var error = validateData(data);
+if (!error) {
+console.log("no errors");
+} else {
+errorHandler();
+}
+}
+var generateDataForScientist = function() {
+return {
+name: "Albert Einstein",
+age : Math.floor(Math.random() * (100 - 1)) + 1,
+};
+};
+var generateDataForComposer = function() {
+return {
+name: "J S Bach",
+age : Math.floor(Math.random() * (100 - 1)) + 1,
+};
+};
+parseRequest(generateDataForScientist, validateDataForAge,
+errorHandlerForAge);
+parseRequest(generateDataForComposer, validateDataForAge,
+errorHandlerForAge);
+
+var santa = {
+	say: function () {
+		console.log("ho ho ho");
+	}
+}
+santa.say();
+
+var colors = ['red', 'green', 'blue'];
+colors.forEach(function (color) {
+	console.log(color);
+});
+var founders = new Map();
+founders.set("facebook", "mark");
+founders.set("google", "larry");
+console.log(founders.size); // 2
+console.log(founders.get("twitter")); // undefined
+console.log(founders.has("google")); // false
+for (var [key, value] of founders) {
+	console.log(key + " founded by " + value);
+}
+
+
+var author = {
+	firstname: "Douglas",
+	lastname: "Crockford",
+	book: {
+		title: "JavaScript- The Good Parts",
+		pages: "172"
+	}
+};
+console.log(author['firstname']); //Douglas
+console.log(author.lastname); //Crockford
+console.log(author.book.title);
